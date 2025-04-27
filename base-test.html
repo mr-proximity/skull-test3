@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Image Test</title>
+    <style>
+        body { background: black; text-align: center; }
+        img { max-width: 90%; margin: 20px auto; display: block; }
+    </style>
+</head>
+<body>
+    <h1 style="color:white;">Image Test</h1>
+    <img src="test.png" alt="Test Image" id="test-image">
+    
+    <script>
+        const img = document.getElementById('test-image');
+        img.onload = function() {
+            console.log("Image loaded successfully");
+            document.body.innerHTML += '<p style="color:white;">Image loaded!</p>';
+        };
+        img.onerror = function() {
+            console.error("Image failed to load");
+            document.body.innerHTML += '<p style="color:red;">Error loading image!</p>';
+        };
+    </script>
+</body>
+</html>
